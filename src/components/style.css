@@ -66,3 +66,30 @@
 /* .active {
   transform: scale(1.05); 
 } */
+
+
+/* .img{
+  flex-shrink: 0;
+  flex-grow: 0;
+  transition: translate 300ms ease-in-out;
+} */
+
+.swiper-pagination-bullets{
+  position: relative;
+  margin-top: 35rem;
+  /* background: red; */
+  bottom: -5rem;
+  padding-bottom: -5rem;
+}
+
+.swiper{
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.searchActive .header{
+  background-color: black;
+}
+
+
+

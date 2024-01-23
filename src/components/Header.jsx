@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import AbmLogo from "../assets/AbmLogo.png"
 import { Link, NavLink } from 'react-router-dom'
 import { IoMdSearch } from "react-icons/io";
@@ -7,13 +7,14 @@ import "./style.css"
 const Header = () => {
 
 
-  // const textStyle = {
-  //   textShadow: '0 0 15px rgba(255, 255, 255, 1)',
-  // };
+  const [search, setSearch] = useState(false);
+  const handleSurchButton = () => {
+    setSearch(!search)
+  }
   
   return (
 
-    <div className='bg-[#252525] w-full h-[69px] flex items-center justify-center gap-14 box-border transition-all duration-300'>
+    <div className='bg-[#252525] w-full h-[69px] flex items-center justify-center gap-14 box-border transition-all duration-300 header'>
       <div className='flex h-full items-center justify-center'>
         <Link to={"/"}><img src={AbmLogo} alt="" className='w-[80px] h-[20px] bottom-0 object-cover'/></Link>
       </div>
@@ -39,7 +40,7 @@ const Header = () => {
         </nav>
       </div>
       <div>
-        <IoMdSearch className='text-[#F3F3F3] text-xl object-cover cursor-pointer'/>
+        <IoMdSearch className={`text-[#F3F3F3] text-xl object-cover cursor-pointer ${search ? "searchActive" : null}`} onClick={handleSurchButton}/>
       </div>
     </div>
   )

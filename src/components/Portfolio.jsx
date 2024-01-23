@@ -10,7 +10,7 @@ const Portfolio = ({ images, interval = 3000, transitionDuration = 500 }) => {
     }, interval);
 
     return () => clearInterval(intervalId);
-  }, [images, interval]);
+  }, [images]);
 
   const handleDotClick = (index) => {
     setCurrentImageIndex(index);
@@ -23,10 +23,10 @@ const Portfolio = ({ images, interval = 3000, transitionDuration = 500 }) => {
       <h3 className='font-MontserratAlternates flex w-full  justify-center my-4'>Our Concern Portfolio</h3>
 
       <div
-        className="flex transition-transform ease-in-out duration-500 transform"
+        className="flex transition-all ease-in-out duration-500 transform w-full h-full"
         style={{
-          transform: `translateX(-${effectiveIndex * 100}%)`,
-          transitionDuration: `${transitionDuration}ms`,
+          transform: `translate(-${effectiveIndex * 100}%)`,
+          // transitionDuration: `${transitionDuration}ms`,
         }}
       >
         {/* <img
@@ -41,7 +41,7 @@ const Portfolio = ({ images, interval = 3000, transitionDuration = 500 }) => {
             key={index}
             src={image}
             alt={`slide-${index}`}
-            className="w-[100%] h-[30rem] object-cover flex justify-center"
+            className="w-vw bg-red-400 h-full object-cover flex justify-center transition-transform"
           />
         ))}
         {/* </div> */}
