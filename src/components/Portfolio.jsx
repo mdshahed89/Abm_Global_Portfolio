@@ -1,81 +1,66 @@
-import React, { useState, useEffect } from 'react';
-import 'tailwindcss/tailwind.css'; // Make sure to include the Tailwind CSS styles
+// src/components/Slider.js
 
-const Portfolio = ({ images, interval = 3000, transitionDuration = 500 }) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+import React from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => prevIndex === images.length -1 ? 0 : prevIndex+1);
-    }, interval);
 
-    return () => clearInterval(intervalId);
-  }, [images]);
 
-  const handleDotClick = (index) => {
-    setCurrentImageIndex(index);
-  };
 
-  const effectiveIndex = currentImageIndex === images.length ? 0 : currentImageIndex;
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 3000,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 2,
+        initialSlide: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ] 
+  
+  
+  // Adjust this value to change the autoplay speed in milliseconds
+};
 
+const Portfolio = ({images}) => {
   return (
-    <div className="relative overflow-hidden mb-10">
-      <h3 className='font-MontserratAlternates flex w-full  justify-center my-4'>Our Concern Portfolio</h3>
+    <div className="w-full overflow-x-hidden pb-10">
+            <h3 className='font-MontserratAlternates flex w-full  justify-center mb-4'>Our Concern Portfolio</h3>
 
-      <div
-        className="flex transition-all ease-in-out duration-500 transform w-full h-full"
-        style={{
-          transform: `translate(-${effectiveIndex * 100}%)`,
-          // transitionDuration: `${transitionDuration}ms`,
-        }}
-      >
-        {/* <img
-          src={images[0]}
-          alt={`slide-clone`}
-          className="w-full h-auto"
-          style={{ opacity: effectiveIndex === 0 ? 0 : 1 }}
-        /> */}
-        {/* <div> */}
+      <Slider {...settings}>
         {images.map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            alt={`slide-${index}`}
-            className="w-vw bg-red-400 h-full object-cover flex justify-center transition-transform"
-          />
+          <div key={index}>
+            <img src={image} alt={`Slide ${index + 1}`} className="w-[full] border-none outline-none px-1" />
+          </div>
         ))}
-        {/* </div> */}
-
-        {/* Cloned version of the first image for smooth transition */}
-        {/* <img
-          src={images[0]}
-          alt={`slide-clone`}
-          className="w-full h-[667px]"
-          style={{ opacity: effectiveIndex === 0 ? 0 : 1 }}
-        /> */}
-        {/* <img
-          src={images[0]}
-          alt={`slide-clone`}
-          className="w-full h-auto"
-          style={{ opacity: effectiveIndex === 0 ? 0 : 1 }}
-        /> */}
-      </div>
-
-      <div className="bottom-4 left-1/2 flex space-x-2 mt-5 justify-center">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => handleDotClick(index)}
-            className={`h-4 w-4 rounded-full ${
-              effectiveIndex === index ? 'bg-blue-500' : 'bg-gray-300'
-            }`}
-          />
-        ))}
-      </div>
+      </Slider>
     </div>
   );
 };
-
-
 
 export default Portfolio;

@@ -1,11 +1,11 @@
 import React from 'react'
 import { Typewriter } from 'react-simple-typewriter'
 
-const TypeWriter = ({text}) => {
+const TypeWriter = () => {
   return (
     <div className=''>
-      <h1 style={{ paddingTop: '5rem', margin: 'auto 0', fontWeight: 'normal' }} className='font-BankGothic'>
-        {text}{' '}
+      <h1 style={{fontWeight: 'normal'}} className='font-BankGothic'>
+        {' '}
         <span style={{ color: '#c7febe', }}>
           {/* Style will be inherited from the parent element */}
           <Typewriter

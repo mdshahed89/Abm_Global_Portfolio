@@ -75,7 +75,7 @@
 } */
 
 .swiper-pagination-bullets{
-  position: relative;
+  position: absolute;
   margin-top: 35rem;
   /* background: red; */
   bottom: -5rem;
@@ -91,5 +91,20 @@
   background-color: black;
 }
 
+
+.ssBox{
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.nssBox{
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+.nsmNav{
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+.smNav{
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
 
 
