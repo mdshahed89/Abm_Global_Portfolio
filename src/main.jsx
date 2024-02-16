@@ -5,8 +5,11 @@ import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
-import Service from './pages/Service.jsx'
 import Contact from './pages/Contact.jsx'
+import Kattop from './pages/Kattop.jsx'
+import Menta from './pages/Menta.jsx'
+import Cilo from './pages/Cilo.jsx'
+import RedSause from './pages/RedSause.jsx'
 
 
 const router = createBrowserRouter([
@@ -16,15 +19,33 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home />
+        element: <Home />,
+        // children: [
+        //   {
+        //     path: "/home/kattop",
+        //     element: <Kattop />
+        //   }
+        // ]
+      },
+      {
+        path: "/kattop",
+            element: <Kattop />
+      },
+      {
+        path: "/menta",
+            element: <Menta />
+      },
+      {
+        path: "/cilo",
+            element: <Cilo />
+      },
+      {
+        path: "/redsause",
+            element: <RedSause />
       },
       {
         path: '/about',
         element: <About />
-      },
-      {
-        path: '/service',
-        element: <Service />
       },
       {
         path: '/contact',
@@ -37,7 +58,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <App /> */}
     <RouterProvider router={router}/>
   </React.StrictMode>,
 )

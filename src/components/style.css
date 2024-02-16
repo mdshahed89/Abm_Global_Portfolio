@@ -32,60 +32,6 @@
   /* width: 100%; */
 }
 
-/* .image-slider-container {
-  position: relative;
-}
-
-.image-slider {
-  transition: 1s ease-in-out;
-}
-
-.dots-container {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #ccc;
-  margin: 0 5px;
-  cursor: pointer;
-}
-
-.dot.active {
-  background-color: #333;
-} */
-
-
-/* .active {
-  transform: scale(1.05); 
-} */
-
-
-/* .img{
-  flex-shrink: 0;
-  flex-grow: 0;
-  transition: translate 300ms ease-in-out;
-} */
-
-.swiper-pagination-bullets{
-  position: absolute;
-  margin-top: 35rem;
-  /* background: red; */
-  bottom: -5rem;
-  padding-bottom: -5rem;
-}
-
-.swiper{
-  position: relative;
-  margin-bottom: 2rem;
-}
 
 .searchActive .header{
   background-color: black;
@@ -107,4 +53,41 @@
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
+.partner{
+  position: relative;
+}
+
+.partner::after{
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 20rem;
+  top: 0;
+  background-image: linear-gradient( to right, rgba(255, 255, 255, 0), rgba(255, 255, 255,1));
+  z-index: 1000000;
+  right: 0;
+}
+.partner::before{
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 20rem;
+  top: 0;
+  background-image: linear-gradient( to left, rgba(255, 255, 255, 0), rgb(255, 255, 255));
+  z-index: 1000000;
+  left: 0;
+}
+
+@media  (max-width: 768px) {
+  .partner::after{
+    
+    width: 10rem;
+    
+  }
+  .partner::before{
+    
+    width: 10rem;
+    
+  }
+}
 

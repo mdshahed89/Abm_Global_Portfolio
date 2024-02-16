@@ -4,8 +4,8 @@ import { Typewriter } from 'react-simple-typewriter'
 const TypeWriter = () => {
   return (
     <div className=''>
-      <h1 style={{fontWeight: 'normal'}} className='font-BankGothic'>
-        {' '}
+      <h1 style={{fontWeight: 'normal'}} className=''>
+        {"EXPLORE THE "}
         <span style={{ color: '#c7febe', }}>
           {/* Style will be inherited from the parent element */}
           <Typewriter

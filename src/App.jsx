@@ -3,17 +3,19 @@ import { useState } from 'react'
 import Header from './components/Header'
 import { Outlet } from 'react-router-dom'
 import Home from './pages/Home'
+import Footer from './components/Footer'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <div className='m-0 p-0 box-border'>
+      <div className='m-0 p-0 box-border font-Montserrat'>
         <Header />
 
-        {/* <Outlet /> */}
-        <Home />
+        <Outlet />
+
+        <Footer />
 
       </div>
     </>

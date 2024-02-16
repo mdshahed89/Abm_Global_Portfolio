@@ -8,7 +8,8 @@ export default {
     extend: {
       fontFamily: {
         MontserratAlternates: ["Montserrat Alternates"],
-        BankGothic: ["BankGothic Lt BT"]
+        BankGothic: ["BankGothic Lt BT"],
+        Montserrat: ["Montserrat", "sans-serif"],
       }
     },
   },
