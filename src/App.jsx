@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-      <div className='m-0 p-0 box-border font-Montserrat'>
+      <div className='m-0 p-0 max-w-[2000px] mx-auto box-border font-Montserrat'>
         <Header />
 
         <Outlet />

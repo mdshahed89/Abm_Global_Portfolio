@@ -37,8 +37,8 @@ const Header = () => {
 
   return (
     <>
-      <div className='relative'>
-        <div className={`bg-[rgba(0,0,0,0.8)] ${searchBox === "ssBox" ? "bg-[black]" : null} hidden md:flex fixed z-50 w-full h-[55px]  items-center justify-between md:justify-center gap-14 box-border transition-all duration-300 header`}>
+      <div className='relative w-[2000px]'>
+        <div className={` ${searchBox === "ssBox" ? "bg-[black]" : "bg-[rgba(22,22,23,0.8)]"} hidden md:flex fixed left-0 right-0 w-full z-50 h-[55px]  items-center justify-between md:justify-center gap-14 box-border transition-all duration-300 header`}>
           <div className='flex justify-center w-[40px] bottom-[-5rem] max-h-[40px]'>
             <Link to={"/"}><img src={AbmLogo2} alt="" className='w-full h-full object-cover transform scale-x-[-1]' /></Link>
           </div>
@@ -52,12 +52,20 @@ const Header = () => {
                 href='/about'
                 to={"/about"}
                 className={({ isActive }) => `${isActive ? "active " : null} duration-300 text-[12px] transition navs`}
-              // style={textStyle}
               >About Us</NavLink>
+
+
+
+              <NavLink
+              to={"/concern"}
+              className={({ isActive }) => `${isActive ? "active " : null} duration-300 text-[12px] transition navs`}
+              >
               <a href='#concerns'
-                className={`duration-300 text-[12px] transition navs `}
-              // onClick={handleActive}
+                className={`duration-300 text-[12px] transition `}
               >Our Concerns</a>
+              </NavLink>
+
+
               <NavLink
 
                 to={"/contact"}
@@ -83,7 +91,7 @@ const Header = () => {
       </div>
 
 
-      <div className={`bg-[rgba(0,0,0,0.8)] ${searchBox === "ssBox" ? "bg-[black]" : null} flex md:hidden fixed z-50 w-full h-[55px]  items-center justify-between gap-14 box-border transition-all duration-300 header px-5`}>
+      <div className={`${searchBox === "ssBox" ? "bg-[black]" : "bg-[rgba(22,22,23,0.8)]"} flex md:hidden fixed z-50 w-full h-[55px]  items-center justify-between gap-14 box-border transition-all duration-300 header px-5`}>
         <div>
           <HiBars2 onClick={handleMenuBtn} className='text-white text-2xl cursor-pointer' />
         </div>

@@ -29,7 +29,7 @@ const Footer = () => {
                         </div>
                         <div className='flex justify-between pt-1 text-sm'>
                             <div className='px-2'>Copyright 2024 ABM Global Ltd. All rights reserved.</div>
-                            <div className='flex gap-5'>
+                            <div className='flex gap-2'>
                                 <p className='cursor-pointer'>Privacy Policy</p>
                                 <p>|</p>
                                 <p className='cursor-pointer'>Terms of Use</p>
@@ -38,7 +38,7 @@ const Footer = () => {
                                 <p>|</p>
                                 <p className='cursor-pointer'>Legal</p>
                             </div>
-                            <div>Bangladesh</div>
+                            
                         </div>
                     </div>
 

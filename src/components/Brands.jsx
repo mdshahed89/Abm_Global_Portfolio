@@ -12,45 +12,46 @@ import { Link } from 'react-router-dom'
 const Brands = () => {
   return (
     <section className='flex items-center justify-center z-0 ' id="concerns">
-      <div className='w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:p-4 place-items-center my-4 md:my-0 bg-white'>
-      <div className='relative'>
-        <img src={Brand1} alt=""  className='rounded-lg'/>
-        <h3 className='absolute top-5 right-5 bg-[#d1d0d0] text-black font-bold rounded-lg px-8 py-2 '>Running</h3>
+      <div className=' max-w-[2000px] mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-2 md:p-4 place-items-center my-4 md:my-0 bg-white'>
+        <div className=' w-full '>
+          <img src={Brand1} alt="" className=' w-full h-full object-cover!important  ' />
+        </div>
+        <div className=' w-full'>
+          <img src={Brand2} alt="" className=' w-full h-full object-cover!important' />
+        </div>
+        <div className='w-full'>
+          <Link
+            to={"/kattop"}
+            target='_blank'
+          >
+            <img src={Brand3} alt="" className=' w-full h-full object-cover' />
+          </Link>
+        </div>
+        <div className='w-full'>
+          <Link
+            to={"/menta"}
+            target='_blank'
+          >
+            <img src={Brand4} alt="" className=' w-full h-full object-cover' />
+          </Link>
+        </div>
+        <div className='w-full'>
+          <Link
+            to={"/cilo"}
+            target='_blank'
+          >
+            <img src={Brand5} alt="" className=' w-full h-full object-cover' />
+          </Link>
+        </div>
+        <div className='w-full'>
+          <Link
+            to={"/redsause"}
+            target='_blank'
+          >
+            <img src={Brand6} alt="" className=' w-full h-full object-cover' />
+          </Link>
+        </div>
       </div>
-      <div className='relative'>
-        <img src={Brand2} alt="" className='rounded-lg' />
-        <h3 className='absolute top-5 right-5 bg-[#d1d0d0] text-black font-bold rounded-lg px-8 py-2 '>Running</h3>
-      </div>
-      <div className='relative'>
-        <Link
-        to={"/kattop"}
-        >
-        <img src={Brand3} alt="" className='rounded-lg' />
-        </Link>
-        {/* <h3 className=' '>Running</h3> */}
-      </div>
-      <div className=''>
-      <Link
-        to={"/menta"}
-        >
-        <img src={Brand4} alt="" className='rounded-lg' />
-        </Link>
-      </div>
-      <div className=''>
-      <Link
-        to={"/cilo"}
-        >
-        <img src={Brand5} alt="" className='rounded-lg' />
-        </Link>
-      </div>
-      <div className=''>
-      <Link
-        to={"/redsause"}
-        >
-        <img src={Brand6} alt="" className='rounded-lg' />
-        </Link>
-      </div>
-    </div>
     </section>
   )
 }
